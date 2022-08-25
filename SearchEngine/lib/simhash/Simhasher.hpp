@@ -1,7 +1,7 @@
 #ifndef SIMHASH_SIMHASHER_HPP
 #define SIMHASH_SIMHASHER_HPP
 
-#include "./cppjieba2/KeywordExtractor.hpp"
+#include "../cppjieba/KeywordExtractor.hpp"
 #include "jenkins.h"
 
 namespace simhash
@@ -22,6 +22,7 @@ namespace simhash
             {
                 return _extractor.Extract(text, res, topN);
             }
+            
             bool make(const string& text, size_t topN, vector<pair<uint64_t, double> >& res) const
             {
                 vector<pair<string, double> > wordweights;

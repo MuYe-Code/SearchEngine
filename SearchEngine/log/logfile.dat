@@ -1,0 +1,120 @@
+2022-08-05 15:36:16,882 MyCategory [INFO] [src/server/SearchEngineServer.cpp:onConnection:42] 127.0.0.1:47138---->127.0.0.1:57508 has connected!
+2022-08-05 15:36:20,135 MyCategory [INFO] [src/server/SearchEngineServer.cpp:onMessage:49] receive from client:
+{
+    "msg": "asd",
+    "msgId": 1
+}
+2022-08-05 15:36:30,441 MyCategory [INFO] [src/server/SearchEngineServer.cpp:onMessage:49] receive from client:
+{
+    "msg": "台湾问题",
+    "msgId": 2
+}
+2022-08-05 19:36:29,167 MyCategory [INFO] [src/server/SearchEngineServer.cpp:onConnection:42] 127.0.0.1:47138---->127.0.0.1:49321 has connected!
+2022-08-05 19:36:39,959 MyCategory [INFO] [src/server/SearchEngineServer.cpp:onConnection:42] 127.0.0.1:47138---->127.0.0.1:50345 has connected!
+2022-08-05 19:37:09,824 MyCategory [INFO] [src/server/SearchEngineServer.cpp:onConnection:42] 127.0.0.1:47138---->127.0.0.1:51369 has connected!
+2022-08-05 19:37:15,486 MyCategory [INFO] [src/server/SearchEngineServer.cpp:onMessage:49] receive from client:
+{
+    "msg": "你好",
+    "msgId": 1
+}
+2022-08-05 19:37:20,549 MyCategory [INFO] [src/server/SearchEngineServer.cpp:onMessage:49] receive from client:
+{
+    "msg": "hell",
+    "msgId": 1
+}
+2022-08-05 19:37:29,291 MyCategory [INFO] [src/server/SearchEngineServer.cpp:onMessage:49] receive from client:
+{
+    "msg": "nihao你",
+    "msgId": 1
+}
+2022-08-05 19:37:48,606 MyCategory [INFO] [src/server/SearchEngineServer.cpp:onMessage:49] receive from client:
+{
+    "msg": "国务院台湾事务办公室",
+    "msgId": 2
+}
+2022-08-05 20:18:09,080 MyCategory [INFO] [src/server/SearchEngineServer.cpp:onConnection:42] 127.0.0.1:47138---->127.0.0.1:57514 has connected!
+2022-08-05 20:18:13,249 MyCategory [INFO] [src/server/SearchEngineServer.cpp:onMessage:49] receive from client:
+{
+    "msg": "国务院台湾事务办公室30日举行例行新闻发布会",
+    "msgId": 2
+}
+2022-08-05 20:18:16,418 MyCategory [INFO] [src/server/SearchEngineServer.cpp:onMessage:49] receive from client:
+{
+    "msg": "国务院台湾事务办公室30日举行例行新闻发布会",
+    "msgId": 2
+}
+2022-08-05 20:18:17,590 MyCategory [INFO] [src/server/SearchEngineServer.cpp:onMessage:49] receive from client:
+{
+    "msg": "国务院台湾事务办公室30日举行例行新闻发布会",
+    "msgId": 2
+}
+2022-08-05 20:18:18,369 MyCategory [INFO] [src/server/SearchEngineServer.cpp:onMessage:49] receive from client:
+{
+    "msg": "国务院台湾事务办公室30日举行例行新闻发布会",
+    "msgId": 2
+}
+2022-08-06 17:40:58,330 MyCategory [INFO] [src/server/SearchEngineServer.cpp:onConnection:42] 127.0.0.1:47138---->127.0.0.1:65215 has connected!
+2022-08-06 17:41:10,449 MyCategory [INFO] [src/server/SearchEngineServer.cpp:onMessage:49] receive from client:
+{
+    "msg": "国务院台湾事务办公室30日举行例行新闻发布会",
+    "msgId": 2
+}
+2022-08-06 17:41:23,909 MyCategory [INFO] [src/server/SearchEngineServer.cpp:onClose:56] 127.0.0.1:47138---->127.0.0.1:65215 has closed
+2022-08-06 17:44:46,592 MyCategory [INFO] [src/server/SearchEngineServer.cpp:onConnection:42] 127.0.0.1:47138---->127.0.0.1:41152 has connected!
+2022-08-06 17:44:55,062 MyCategory [INFO] [src/server/SearchEngineServer.cpp:onMessage:49] receive from client:
+{
+    "msg": "国务院台湾事务办公室30日举行例行新闻发布会",
+    "msgId": 2
+}
+2022-08-08 22:27:34,832 MyCategory [INFO] [src/server/SearchEngineServer.cpp:onConnection:42] 127.0.0.1:47138---->127.0.0.1:26763 has connected!
+2022-08-08 22:27:44,731 MyCategory [INFO] [src/server/SearchEngineServer.cpp:onMessage:49] receive from client:
+{
+    "msg": "国务院台湾事务办公室30日举行例行新闻发布会",
+    "msgId": 2
+}
+2022-08-08 22:28:49,455 MyCategory [INFO] [src/server/SearchEngineServer.cpp:onConnection:42] 127.0.0.1:47138---->127.0.0.1:29835 has connected!
+2022-08-08 22:28:53,391 MyCategory [INFO] [src/server/SearchEngineServer.cpp:onMessage:49] receive from client:
+{
+    "msg": "国务院台湾事务办公室30日举行例行新闻发布会",
+    "msgId": 2
+}
+2022-08-09 09:10:58,048 MyCategory [INFO] [src/server/SearchEngineServer.cpp:onConnection:42] 127.0.0.1:47138---->127.0.0.1:2754 has connected!
+2022-08-09 09:11:04,584 MyCategory [INFO] [src/server/SearchEngineServer.cpp:onMessage:49] receive from client:
+{
+    "msg": "国务院台湾事务办公室30日举行例行新闻发布会",
+    "msgId": 2
+}
+2022-08-09 09:12:13,210 MyCategory [INFO] [src/server/SearchEngineServer.cpp:onConnection:42] 127.0.0.1:47138---->127.0.0.1:9410 has connected!
+2022-08-09 09:12:17,605 MyCategory [INFO] [src/server/SearchEngineServer.cpp:onMessage:49] receive from client:
+{
+    "msg": "国务院台湾事务办公室30日举行例行新闻发布会",
+    "msgId": 2
+}
+2022-08-11 14:03:19,058 MyCategory [INFO] [src/server/SearchEngineServer.cpp:onConnection:42] 127.0.0.1:47138---->127.0.0.1:19076 has connected!
+2022-08-11 14:03:29,173 MyCategory [INFO] [src/server/SearchEngineServer.cpp:onMessage:49] receive from client:
+{
+    "msg": "国务院台湾事务办公室30日举行例行新闻发布会",
+    "msgId": 2
+}
+2022-08-11 14:05:47,421 MyCategory [INFO] [src/server/SearchEngineServer.cpp:onConnection:42] 127.0.0.1:47138---->127.0.0.1:23684 has connected!
+2022-08-11 14:05:52,162 MyCategory [INFO] [src/server/SearchEngineServer.cpp:onMessage:49] receive from client:
+{
+    "msg": "国务院台湾事务办公室30日举行例行新闻发布会",
+    "msgId": 2
+}
+2022-08-11 14:06:02,372 MyCategory [INFO] [src/server/SearchEngineServer.cpp:onMessage:49] receive from client:
+{
+    "msg": "国务院台湾事务办公室30日举行例行新闻发布会",
+    "msgId": 2
+}
+2022-08-11 14:08:01,865 MyCategory [INFO] [src/server/SearchEngineServer.cpp:onConnection:42] 127.0.0.1:47138---->127.0.0.1:27268 has connected!
+2022-08-11 14:08:05,859 MyCategory [INFO] [src/server/SearchEngineServer.cpp:onMessage:49] receive from client:
+{
+    "msg": "国务院台湾事务办公室30日举行例行新闻发布会",
+    "msgId": 2
+}
+2022-08-11 14:08:13,635 MyCategory [INFO] [src/server/SearchEngineServer.cpp:onMessage:49] receive from client:
+{
+    "msg": "国务院台湾事务办公室30日举行例行新闻发布会",
+    "msgId": 2
+}

@@ -39,23 +39,25 @@ class KeywordExtractor {
   ~KeywordExtractor() {
   }
 
-  void Extract(const string& sentence, vector<string>& keywords, size_t topN) const {
+  bool Extract(const string& sentence, vector<string>& keywords, size_t topN) const {
     vector<Word> topWords;
-    Extract(sentence, topWords, topN);
+    if(!Extract(sentence, topWords, topN)) { return false; }
     for (size_t i = 0; i < topWords.size(); i++) {
       keywords.push_back(topWords[i].word);
     }
+    return true;
   }
 
-  void Extract(const string& sentence, vector<pair<string, double> >& keywords, size_t topN) const {
+  bool Extract(const string& sentence, vector<pair<string, double> >& keywords, size_t topN) const {
     vector<Word> topWords;
-    Extract(sentence, topWords, topN);
+    if(!Extract(sentence, topWords, topN)) { return false; }
     for (size_t i = 0; i < topWords.size(); i++) {
       keywords.push_back(pair<string, double>(topWords[i].word, topWords[i].weight));
     }
+    return true;
   }
 
-  void Extract(const string& sentence, vector<Word>& keywords, size_t topN) const {
+  bool Extract(const string& sentence, vector<Word>& keywords, size_t topN) const {
     vector<string> words;
     segment_.Cut(sentence, words);
 
@@ -72,7 +74,7 @@ class KeywordExtractor {
     }
     if (offset != sentence.size()) {
       XLOG(ERROR) << "words illegal";
-      return;
+      return false;
     }
 
     keywords.clear();
@@ -90,6 +92,7 @@ class KeywordExtractor {
     topN = min(topN, keywords.size());
     partial_sort(keywords.begin(), keywords.begin() + topN, keywords.end(), Compare);
     keywords.resize(topN);
+    return true;
   }
  private:
   void LoadIdfDict(const string& idfPath) {

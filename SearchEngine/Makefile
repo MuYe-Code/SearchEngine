@@ -1,58 +1,61 @@
-## 可执行程序
-EXE_OFFLINE_MODULE1:=bin/offline_module1
-EXE_OFFLINE_MODULE2:=bin/offline_module2
-EXE_ONLINE_SERVER:=bin/online_server
-EXE_ONLINE_CLIENT:=bin/online_client
-EXES:= $(EXE_OFFLINE_MODULE1) $(EXE_OFFLINE_MODULE2) $(EXE_ONLINE_SERVER) $(EXE_ONLINE_CLIENT)
+SRCS1:=$(wildcard src/DictBuilder/*.cpp)
+SRCS2:=$(wildcard src/WebProcessor/*.cpp)
+SRCS3:=$(wildcard src/server/*.cpp)
+SRCS4:=$(wildcard src/client/*.cpp)
 
-## 源文件
-SRC_OFFLINE_MODULE1:= $(wildcard src/Offline/Module1/*.cc)
-SRC_OFFLINE_MODULE2:= $(wildcard src/Offline/Module2/*.cc)
-SRC_ONLINE_SERVER:= $(wildcard src/Online/Server/*.cc)
-SRC_ONLINE_CLIENT:= $(wildcard src/Online/Client/*.cc)
-SRC:= $(SRC_OFFLINE_MODULE1) $(SRC_OFFLINE_MODULE2) $(SRC_ONLINE_SERVER) $(SRC_ONLINE_CLIENT)
+OBJS1:=$(patsubst src/DictBuilder/%.cpp, objs/DictBuilder/%.o, $(SRCS1))
+OBJS2:=$(patsubst src/WebProcessor/%.cpp, objs/WebProcessor/%.o, $(SRCS2))
+OBJS3:=$(patsubst src/server/%.cpp, objs/server/%.o, $(SRCS3))
+OBJS4:=$(patsubst src/client/%.cpp, objs/client/%.o, $(SRCS4))
 
-## OBJ文件
-OBJ_OFFLINE_MODULE1:= $(patsubst src/Offline/Module1/%.cc,obj/Offline/Module1/%.o,$(SRC_OFFLINE_MODULE1))
-OBJ_OFFLINE_MODULE2:= $(patsubst src/Offline/Module2/%.cc,obj/Offline/Module2/%.o,$(SRC_OFFLINE_MODULE2))
-OBJ_ONLINE_SERVER:= $(patsubst src/Online/Server/%.cc,obj/Online/Server/%.o,$(SRC_ONLINE_SERVER))
-OBJ_ONLINE_CLIENT:= $(patsubst src/Online/Client/%.cc,obj/Online/Client/%.o,$(SRC_ONLINE_CLIENT))
-OBJS:= $(OBJ_OFFLINE_MODULE1) $(OBJ_OFFLINE_MODULE2) $(OBJ_ONLINE_SERVER) $(OBJ_ONLINE_CLIENT)
+OUT1:= bin/DictBuilder
+OUT2:= bin/WebProcessor
+OUT3:= bin/server
+OUT4:= bin/client
 
-## 编译OfflineModule1
-OfflineModule1:$(EXE_OFFLINE_MODULE1)
-OfflineModule2:$(EXE_OFFLINE_MODULE2)
-OnlineServer:$(EXE_ONLINE_SERVER)
-OnlineClient:$(EXE_ONLINE_CLIENT)
+OUT:= $(OUT1) $(OUT2) $(OUT3) $(OUT4)
+SRCS:= $(SRCS1) $(SRCS2) $(SRCS3) $(SRCS4)
+OBJS:= $(OBJS1) $(OBJS2) $(OBJS3) $(OBJS4) 
+LINKS:= -lpthread -llog4cpp -lredis++ -lhiredis -pthread -std=c++11
+CC:=g++
 
-## 生成可执行文件
-$(EXE_OFFLINE_MODULE1):$(OBJ_OFFLINE_MODULE1)
-	g++ $^ -o $@ -Wall -g -std=c++11
+OUTS: $(OUT)
 
-$(EXE_OFFLINE_MODULE2):$(OBJ_OFFLINE_MODULE2)
-	g++ $^ -o $@ -Wall -g -std=c++11
+Dict: $(OUT1)
+Web: $(OUT2)
+ser: $(OUT3)
+cli: $(OUT4)
 
-$(EXE_ONLINE_SERVER):$(OBJ_ONLINE_SERVER)
-	g++ $^ -o $@ -Wall -g -lpthread -lredis++ -lhiredis -std=c++17
+$(OUT1): $(OBJS1)
+	$(CC) $^ -o $@ $(LINKS)
 
-$(EXE_ONLINE_CLIENT):$(OBJ_ONLINE_CLIENT)
-	g++ $^ -o $@ -Wall -g -std=c++11
+$(OUT2): $(OBJS2)
+	$(CC) $^ -o $@ $(LINKS)
 
-## 生成.o文件
-obj/Offline/Module1/%.o : src/Offline/Module1/%.cc
-	g++ -c $^ -o $@ -Wall -g -std=c++11
+$(OUT3): $(OBJS3)
+	$(CC) $^ -o $@ $(LINKS)
 
-obj/Offline/Module2/%.o : src/Offline/Module2/%.cc
-	g++ -c $^ -o $@ -Wall -g -std=c++11
+$(OUT4): $(OBJS4)
+	$(CC) $^ -o $@ $(LINKS)
 
-obj/Online/Server/%.o : src/Online/Server/%.cc
-	g++ -c $^ -o $@ -Wall -g -std=c++17
+objs/DictBuilder/%.o : src/DictBuilder/%.cpp
+	$(CC) -c $^ -o $@
 
-obj/Online/Client/%.o : src/Online/Client/%.cc
-	g++ -c $^ -o $@ -Wall -g -std=c++11
+objs/WebProcessor/%.o : src/WebProcessor/%.cpp
+	$(CC) -c $^ -o $@
 
+objs/server/%.o : src/server/%.cpp
+	$(CC) -c $^ -o $@
 
-.PHONY:clean rebuild
-clean:
-	$(RM) $(EXES) $(OBJS)
-rebuild:clean $(EXES)
+objs/client/%.o : src/client/%.cpp
+	$(CC) -c $^ -o $@
+
+.PHONY: clean rebuild print 
+
+clean: 
+	rm -f $(OBJS) $(OUT)
+	
+rebuild: clean OUTS
+
+print:
+	echo $(OBJS)
